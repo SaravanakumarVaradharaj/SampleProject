@@ -12,14 +12,19 @@ public class ExchangeValue {
 	@Id
 	@Column(name="exid")
 	private Long id;
+	
 	@Column(name="exfrom")
 	private String from;
+	
 	@Column(name="exto")
 	private String to;
+	
 	@Column(name="exconvert")
 	private BigDecimal convert;
-	@Column(name="export")
-	private int port;
+	
+	@Column(name="excport")
+	private Integer port;
+	
 	public ExchangeValue() {
 		// TODO Auto-generated constructor stub
 	}
@@ -57,7 +62,7 @@ public class ExchangeValue {
 	public int getPort() {
 		return port;
 	}
-	public void setPort(int port) {
+	public void setPort(Integer port) {
 		this.port = port;
 	}
 

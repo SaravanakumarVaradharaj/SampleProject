@@ -20,9 +20,9 @@ public class ExchangeControl {
 	Environment env;
 @GetMapping("/moneyexchange/from/{from}/to/{to}")
 public ExchangeValue getExchangevalue(@PathVariable String from,@PathVariable String to) {
-	ExchangeValue exchange=	new ExchangeValue(100L,from, to,BigDecimal.valueOf(65));
-	//ExchangeValue exchange=repo.findByFromAndTo(from, to);
-	exchange.setPort(Integer.parseInt(env.getProperty("local.server.port")));
+	//ExchangeValue exchange=	new ExchangeValue(100L,from, to,BigDecimal.valueOf(65));
+	ExchangeValue exchange=repo.findByFromAndTo(from, to);
+	exchange.setPort(Integer.valueOf(env.getProperty("local.server.port")));
 	return exchange;
 }
 }
