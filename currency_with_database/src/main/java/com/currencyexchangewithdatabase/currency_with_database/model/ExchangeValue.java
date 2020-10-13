@@ -20,7 +20,7 @@ public class ExchangeValue {
 	private String to;
 	
 	@Column(name="exconvert")
-	private BigDecimal convert;
+	private BigDecimal cmultiple;
 	
 	@Column(name="excport")
 	private Integer port;
@@ -28,12 +28,12 @@ public class ExchangeValue {
 	public ExchangeValue() {
 		// TODO Auto-generated constructor stub
 	}
-	public ExchangeValue(Long id, String from, String to, BigDecimal cnovert) {
+	public ExchangeValue(Long id, String from, String to, BigDecimal cmultiple) {
 		super();
 		this.id = id;
 		this.from = from;
 		this.to = to;
-		this.convert = cnovert;
+		this.cmultiple = cmultiple;
 	}
 	public Long getId() {
 		return id;
@@ -53,11 +53,12 @@ public class ExchangeValue {
 	public void setTo(String to) {
 		this.to = to;
 	}
-	public BigDecimal getConvert() {
-		return convert;
+	
+	public BigDecimal getCmultiple() {
+		return cmultiple;
 	}
-	public void setConvert(BigDecimal convert) {
-		this.convert = convert;
+	public void setCmultiple(BigDecimal cmultiple) {
+		this.cmultiple = cmultiple;
 	}
 	public int getPort() {
 		return port;

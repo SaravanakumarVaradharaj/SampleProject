@@ -25,4 +25,11 @@ public ExchangeValue getExchangevalue(@PathVariable String from,@PathVariable St
 	exchange.setPort(Integer.valueOf(env.getProperty("local.server.port")));
 	return exchange;
 }
+@GetMapping("/moneyexchange/from/{from}")
+public ExchangeValue getExchangevalue(@PathVariable String from) {
+	//ExchangeValue exchange=	new ExchangeValue(100L,from, to,BigDecimal.valueOf(65));
+	ExchangeValue exchange=repo.findByFrom(from);
+	exchange.setPort(Integer.valueOf(env.getProperty("local.server.port")));
+	return exchange;
+}
 }

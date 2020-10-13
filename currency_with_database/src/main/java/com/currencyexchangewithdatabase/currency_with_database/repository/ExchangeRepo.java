@@ -6,5 +6,5 @@ import com.currencyexchangewithdatabase.currency_with_database.model.ExchangeVal
 
 public interface ExchangeRepo extends JpaRepository<ExchangeValue,Long>{
 	ExchangeValue findByFromAndTo(String from,String to);
-
+	ExchangeValue findByFrom(String from);
 }
